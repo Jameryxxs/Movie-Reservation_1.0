@@ -1,0 +1,57 @@
+.nowshowing {
+    background: none;
+}
+
+.nowshowtext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nowshowtext h1 {
+    font-family: 'Istok Web', sans-serif;
+    background: linear-gradient(to right, #000000 0%, #AD3434 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    margin: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    /* 💡 NEW: don't break text */
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* 🔥 Responsive Mobile */
+@media (max-width: 768px) {
+    .nowshowtext {
+        gap: 8px;
+        /* tighter gap */
+        margin-top: 20px;
+        height: auto;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .nowshowtext h1 {
+        font-size: 22px;
+        /* make text smaller */
+    }
+
+    .logo {
+        width: 24px;
+        /* smaller logo */
+        height: 24px;
+    }
+}
