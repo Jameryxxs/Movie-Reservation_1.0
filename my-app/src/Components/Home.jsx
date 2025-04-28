@@ -1,8 +1,12 @@
+import react from 'react';
 
 function Home() {
     return (
-        <h1>Welcome to my landing page</h1>
+        <div>
+            <h1>Welcome to my landing page</h1>
+        </div>
+        
     )
 }
 
-export default Home(); 
+export default Home; 

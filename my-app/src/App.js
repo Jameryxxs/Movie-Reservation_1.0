@@ -6,7 +6,6 @@ import LogIn from "./Components/LogIn";
 import Home from "./Components/Home";
 import ContactUs from "./Components/ContactUs";
 import About from "./Components/About";
-import { NavLink } from "react-router-dom";
 
 
 
@@ -29,7 +28,6 @@ function App() {
         <Route path="/reserved" element={<Reserved/>}/> 
         <Route path="/signup" element={<SignUp/>}/> 
       </Routes>
-      <NavLink to="/" style={({isActive})}></NavLink>
     </div>
   );
 }

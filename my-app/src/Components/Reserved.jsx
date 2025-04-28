@@ -1,8 +1,11 @@
+import react from 'react';
 
 function Reserved() {
     return (
-        <h1>Reserved</h1>
+        <div>
+            <h1>Reserved</h1>
+        </div>
     )
 }
 
-export default Reserved(); 
+export default Reserved; 
