@@ -6,6 +6,7 @@ import LogIn from "./Components/LogIn";
 import Home from "./Components/Home";
 import ContactUs from "./Components/ContactUs";
 import About from "./Components/About";
+import Search from "./Components/SearchBar";
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Link to="/login">LogIn</Link> |{""}
         <Link to="/reserved">Reserved</Link> |{""}
         <Link to="/signup">SignUp</Link> |{""}
+        <Link to="/search">Search</Link> |{""}
       </nav>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/login" element={<LogIn/>}/>
         <Route path="/reserved" element={<Reserved/>}/> 
         <Route path="/signup" element={<SignUp/>}/> 
+        <Route path="/search" element={<Search/>}/> 
       </Routes>
     </div>
   );
