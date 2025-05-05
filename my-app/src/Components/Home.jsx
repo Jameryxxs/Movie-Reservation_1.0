@@ -1,12 +1,12 @@
-import react from 'react';
+import React from 'react';
 
 function Home() {
-    return (
-        <div>
-            <h1>Welcome to my landing page</h1>
-        </div>
-        
-    )
+  return (
+      <div>
+           <h1>About Us</h1>
+      </div>
+      
+  )
 }
 
-export default Home; 
+export default Home;
