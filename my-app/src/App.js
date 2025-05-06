@@ -7,7 +7,6 @@ import Home from "./Components/Home";
 import ContactUs from "./Components/ContactUs";
 import About from "./Components/About";
 import Search from "./Components/SearchBar";
-
 import Navbar from "./Components/Navigation";
 
 

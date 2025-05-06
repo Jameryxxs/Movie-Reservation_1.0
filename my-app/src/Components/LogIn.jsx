@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Login() {
+const LogIn = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: '',
+    firstName: '',
     password: ''
   });
 
@@ -15,66 +16,86 @@ function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login form submitted:', formData);
-    // Add your authentication logic here
-  };
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert(data.message);
+        localStorage.setItem('token', data.token); // Store token for future use
+        navigate('/'); // Or wherever you want after login
+      } else {
+        alert(data.message || 'Login failed');
+      }
+    } catch (error) {
+      alert('Error connecting to server');
+      console.error(error);
+    }
+  };  
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      {/* Main card container */}
-      <div className="flex justify-center items-center flex-grow px-4">
-        <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 border border-gray-200">
-          <h1 className="text-3xl font-bold text-center mb-12">LOG IN</h1>
+    <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-b from-[#142645] to-[#02122E] font-poppins px-4 py-6">
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-[#02122E] rounded-xl shadow-lg border border-[#142645] p-6 sm:p-8 md:p-10 relative">
+        <div className="absolute inset-1 border border-white/30 rounded-lg pointer-events-none"></div>
+        <h2 className="text-center text-white text-xl sm:text-2xl font-medium mb-6 sm:mb-8">LOG IN</h2>
+        <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
+          <div>
+            <label className="block text-white text-xs sm:text-sm mb-1 sm:mb-2">FIRST NAME</label>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              className="w-full px-3 py-2 rounded-sm bg-white-300/80 text-black text-sm outline-none"
+              placeholder="Enter your first name"
+              required
+            />
+          </div>
           
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div>
-              <label className="block text-sm font-medium uppercase mb-2">USERNAME</label>
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none"
-                required
-              />
+          <div>
+            <label className="block text-white text-xs sm:text-sm mb-1 sm:mb-2">PASSWORD</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full px-3 py-2 rounded-sm bg-white-300/80 text-black text-sm outline-none"
+              placeholder="Enter your password"
+              required
+            />
+            <div className="text-right mt-1">
+              <a href="#" className="text-[#146BFF] text-[10px]">forgot password?</a>
             </div>
-            
-            <div>
-              <label className="block text-sm font-medium uppercase mb-2">PASSWORD</label>
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none"
-                required
-              />
-              <div className="text-right mt-1">
-                <button type="button" className="text-xs">FORGOT PASSWORD</button>
-              </div>
-            </div>
-            
-            <div className="flex space-x-4 pt-6">
-              <button
-                type="submit"
-                className="w-1/2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded"
-              >
-                LOG IN
-              </button>
-              <Link
-                to="/SignUp"
-                className="w-1/2 bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded text-center"
-              >
-                REGISTER
-              </Link>
-            </div>
-          </form>
-        </div>
+          </div>
+          
+          <button
+            type="submit"
+            className="w-full py-2 sm:py-3 bg-[#EF8B00] text-black font-medium rounded-sm shadow hover:opacity-90 transition"
+          >
+            LOG IN
+          </button>
+          
+          <div className="text-center text-white text-xs sm:text-sm my-1 sm:my-2">or</div>
+          
+          <button
+            type="button"
+            onClick={() => navigate('/signup')}
+            className="w-full py-2 sm:py-3 border border-white text-white font-medium rounded-sm bg-transparent hover:opacity-90 transition"
+          >
+            REGISTER
+          </button>
+        </form>
       </div>
     </div>
   );
-}
+};
 
-export default Login;
+export default LogIn;
