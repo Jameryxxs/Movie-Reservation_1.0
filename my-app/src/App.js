@@ -8,21 +8,24 @@ import ContactUs from "./Components/ContactUs";
 import About from "./Components/About";
 import Search from "./Components/SearchBar";
 
+import Navbar from "./Components/Navigation";
 
 
 function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/">Home</Link> |{""}
+      <Navbar />
+        {/* <Link to="/">Home</Link> |{""}
         <Link to="/about">About</Link> |{""}
         <Link to="/contact">ContactUs</Link> |{""}
         <Link to="/login">LogIn</Link> |{""}
         <Link to="/reserved">Reserved</Link> |{""}
         <Link to="/signup">SignUp</Link> |{""}
-        <Link to="/search">Search</Link> |{""}
+        <Link to="/search">Search</Link> |{""} */}
       </nav>
       <Routes>
+        
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<ContactUs/>}/>
