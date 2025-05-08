@@ -1,0 +1,68 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(to bottom, #000814, #02122E);
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    max-width: 600px;
+    width: 100%;
+    background: #1a1a2e;
+    padding: 25px 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: #e6e8ef;
+    font-style: italic;
+    margin: 25px;
+}
+
+form h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #ddd;
+}
+
+form .input-box {
+    margin-top: 20px;
+}
+
+.input-box .field {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #d97706;
+    outline: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 8px; 
+}
+
+.input-box .field.mess {
+    height: 200px;
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 55px;
+    background: #c56c07;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #212020;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: .5s;
+}
+
+.submit-btn:hover {
+    background: #ff8800;
+}
