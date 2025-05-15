@@ -1,0 +1,117 @@
+.movie-detail-container {
+  background: linear-gradient(to bottom, #000814, #02122E);
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.back-button {
+  background-color: transparent;
+  border: 2px solid #f59e0b;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: rgba(245, 158, 11, 0.2);
+}
+
+.movie-detail-card {
+  background-color: #0f172a;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-top {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.poster-image {
+  width: 150px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #f59e0b;
+}
+
+.movie-info {
+  flex: 1;
+}
+
+.detail-movie-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+
+.meta-info p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.movie-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-box {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  flex: 1;
+  margin-top: 1rem;
+}
+
+.stat-label {
+  font-size: 1.3rem; 
+  color: #facc15;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.stat-value {
+  font-size: 0.9rem; 
+
+  margin-top: 0.25rem;
+}
+
+.synopsis-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #facc15;
+}
+
+.synopsis-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.buy-ticket-button {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 2px solid #f59e0b;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s;
+}
+
+.buy-ticket-button:hover {
+  background-color: rgba(245, 158, 11, 0.2);
+}
