@@ -38,6 +38,7 @@ function Navbar() {
             <div className="md:hidden mt-2 border-t border-blue-700 pt-2">
               <NavLink to="/login" className={navLinkClass} onClick={() => setIsOpen(false)}>Log In</NavLink>
               <NavLink to="/signup" className={navLinkClass} onClick={() => setIsOpen(false)}>Sign Up</NavLink>
+              <NavLink to="/profile" className={navLinkClass} onClick={() => setIsOpen(false)}>Profile</NavLink>
             </div>
           </div>
 
@@ -46,7 +47,7 @@ function Navbar() {
             <button onClick={() => navigate("/search")} className="text-white">
               <FaSearch size={20} />
             </button>
-            <NavLink to="/login">
+            <NavLink to="/profile">
               <FaUserCircle size={28} />
             </NavLink>
           </div>
