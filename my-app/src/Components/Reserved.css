@@ -1,0 +1,447 @@
+/* @import "tailwindcss"; */
+
+
+/* MovieSeatReservation.css */
+
+/* Main Container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ef4444;
+  padding: 1rem;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 72rem;
+}
+
+@media (min-width: 768px) {
+  .app-wrapper {
+    flex-direction: row;
+  }
+}
+
+/* Panel Styles */
+.panel {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    width: 50%;
+  }
+}
+
+.panel-content {
+  background-color: #111827;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.icon-button {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.logo-text {
+  color: white;
+  font-style: italic;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 2rem;
+  height: 2rem;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+
+/* Date Selector */
+.date-selector {
+  display: flex;
+  overflow-x: auto;
+  background-color: #1f2937;
+  padding: 0.5rem 0;
+}
+
+.date-item {
+  background-color: rgba(0, 0, 0, 0.322);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.1rem;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.date-selected {
+  background-color: #ffffff33;
+  font-weight: bold;
+}
+
+.date-day {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.date-number {
+  font-size: 1.25rem;
+  color: #9ca3af;
+}
+
+.date-number-selected {
+  color: white;
+}
+
+/* Search Container */
+.search-container {
+  padding: 1rem;
+}
+
+.search-box {
+  background-color: #1f2937;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.search-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #9ca3af;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 0.5rem;
+  width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Cinema List */
+.cinema-list {
+  padding: 1rem;
+}
+
+.cinema-card {
+  /* background-color: #1f2937; */
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.expanded {
+  padding: 1rem;
+}
+
+.cinema-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cinema-brand {
+  display: flex;
+  align-items: center;
+}
+
+.cinema-logo {
+  background-color: white;
+  color: #ef4444;
+  font-weight: bold;
+  padding: 0.50rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.pacific {
+  color: black;
+}
+
+.cinema-name {
+  color: white;
+}
+
+.chevron-up {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #3b82f6;
+}
+
+.chevron-down {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #9ca3af;
+}
+
+.cinema-details {
+  margin-bottom: 0.5rem;
+}
+
+.ticket-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-type {
+  color: #9ca3af;
+}
+
+.ticket-price {
+  color: white;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.time-slot {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #374151;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.time-selected {
+  background-color: #4f46e5;
+  color: white;
+}
+
+/* Seat Section */
+.seat-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Screen */
+.screen-container {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.screen {
+  width: 100%;
+  height: 2rem;
+  border-top: 2px solid #60a5fa;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  opacity: 0.5;
+}
+
+.screen-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #9ca3af;
+}
+
+/* Seats Grid */
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.seat {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.seat-empty {
+  background-color: transparent;
+}
+
+.seat-available {
+  background-color: white;
+  color: black;
+}
+
+.seat-reserved {
+  background-color: red;
+  color: black;
+}
+
+.seat-selected {
+  background-color: green;
+  color: black;
+}
+
+.seat-taken {
+  background-color: green;
+  color: black;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-top: 1px solid #374151;
+  border-bottom: 1px solid #374151;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.legend-text {
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+/* Cinema Info */
+.cinema-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ticket-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.cinema-title {
+  color: white;
+  font-weight: bold;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detail-card {
+  background-color: #1f2937;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.detail-value {
+  color: white;
+}
+
+/* Summary */
+.summary {
+  margin-bottom: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.summary-label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.summary-value {
+  font-size: 0.875rem;
+  color: white;
+}
+
+.total {
+  font-weight: bold;
+}
+
+/* Buy Button */
+.buy-button {
+  width: 100%;
+  background-color: #d97706;
+  color: white;
+  padding: 0.75rem 0;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.button-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
