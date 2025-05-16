@@ -89,7 +89,7 @@ const Home = () => {
                   handleBuyTicket(movie.title);
                 }}
               >
-                Buy Ticket
+                Reserve Ticket
               </button>
             </div>
           ))}
@@ -125,7 +125,7 @@ const Home = () => {
                   handleBuyTicket(movie.title);
                 }}
               >
-                Buy Ticket
+                Reserve Ticket
               </button>
             </div>
           ))}
