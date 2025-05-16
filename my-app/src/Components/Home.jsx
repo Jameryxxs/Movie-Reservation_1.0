@@ -3,6 +3,9 @@ import { MapPin } from "lucide-react";
 import "./Home.css";
 import MovieCarousel from "./MovieCarousel";
 import { useNavigate } from "react-router-dom";
+import NowShowing from "./movies/Nowshowing/NowShowing";
+import ComingSoon from "./movies/Comingsoon/ComingSoon";
+import AdvancedTickets from "./movies/Advancedtickets/AdvancedTickets";
 
 const API_KEY = "9966a963c6f1fc2755816b7795357a8e";
 
@@ -44,6 +47,11 @@ const Home = () => {
     alert(`Buying ticket for: ${title}`);
   };
 
+  const handleViewAllClick = () => {
+    navigate("./movies/Nowshowing/NowShowing");
+  };
+
+
   return (
     <div className="home">
       {/* Hero Banner */}
@@ -55,7 +63,7 @@ const Home = () => {
       <section className="section">
         <div className="section-header">
           <h2 className="section-title">Now Showing | Coming Soon</h2>
-          <button className="view-all">View All</button>
+          <button onClick={handleViewAllClick} className="view-all">View All</button>
         </div>
         <div className="movie-grid">
           {nowShowing.map((movie) => (

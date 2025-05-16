@@ -1,0 +1,54 @@
+.movie-nav {
+    margin: 30px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 46px;
+    /* ✅ More spacing between items */
+    padding: 0;
+    margin: 0 auto;
+}
+
+.movie-nav li {
+    font-size: 22px;
+    /* ✅ Adjust font size here */
+    color: #fff;
+    cursor: pointer;
+    font-style: italic;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.movie-nav li:hover {
+    color: #AD3434;
+}
+
+.movie-nav li.active {
+    font-style: italic;
+    font-weight: bold;
+    color: #AD3434;
+    border-bottom: 3px solid #AD3434;
+    /* 🔥 Highlight line */
+    padding-bottom: 5px;
+    /* 🧽 Adds spacing above the line */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .movie-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .movie-nav li {
+        font-size: 18px;
+        /* Smaller font for mobile */
+    }
+}
