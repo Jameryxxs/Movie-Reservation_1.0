@@ -25,7 +25,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
- {/* new */}
+        {/* new */}
       </Routes>
     </div>
   );
