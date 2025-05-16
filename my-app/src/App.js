@@ -9,6 +9,7 @@ import About from "./Components/About";
 import Search from "./Components/SearchBar";
 import Navbar from "./Components/Navigation";
 import MovieDetail from "./Components/MovieDetail";
+import Profile from "./Components/Profile";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/search" element={<Search />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="/profile" element={<Profile />} />
         {/* new */}
       </Routes>
     </div>

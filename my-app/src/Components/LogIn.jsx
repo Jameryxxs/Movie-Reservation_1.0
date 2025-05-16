@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -7,6 +7,13 @@ const LogIn = () => {
     firstName: '',
     password: ''
   });
+
+  useEffect(() => {
+    // Redirect if already logged in
+    if (localStorage.getItem("userLoggedIn") === "true") {
+      navigate("/profile");
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,20 +25,29 @@ const LogIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         alert(data.message);
-        localStorage.setItem('token', data.token); // Store token for future use
-        navigate('/'); // Or wherever you want after login
+
+        // Save user session
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userLoggedIn', 'true');
+        localStorage.setItem('userData', JSON.stringify({
+          name: data.user?.name || formData.firstName,
+          avatar: data.user?.avatar || `https://i.pravatar.cc/150?u=${formData.firstName}`,
+          bio: data.user?.bio || "Welcome back to your profile!",
+        }));
+
+        navigate('/profile');
       } else {
         alert(data.message || 'Login failed');
       }
@@ -39,7 +55,7 @@ const LogIn = () => {
       alert('Error connecting to server');
       console.error(error);
     }
-  };  
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-b from-[#142645] to-[#02122E] font-poppins px-4 py-6">
@@ -59,7 +75,7 @@ const LogIn = () => {
               required
             />
           </div>
-          
+
           <div>
             <label className="block text-white text-xs sm:text-sm mb-1 sm:mb-2">PASSWORD</label>
             <input
@@ -75,16 +91,16 @@ const LogIn = () => {
               <a href="#" className="text-[#146BFF] text-[10px]">forgot password?</a>
             </div>
           </div>
-          
+
           <button
             type="submit"
             className="w-full py-2 sm:py-3 bg-[#EF8B00] text-black font-medium rounded-sm shadow hover:opacity-90 transition"
           >
             LOG IN
           </button>
-          
+
           <div className="text-center text-white text-xs sm:text-sm my-1 sm:my-2">or</div>
-          
+
           <button
             type="button"
             onClick={() => navigate('/signup')}

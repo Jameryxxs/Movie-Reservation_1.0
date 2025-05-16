@@ -18,7 +18,7 @@ function Navbar() {
         style={{ background: "#02122E" }}
       >
         {/* Logo */}
-        <div className="text-xl font-serif italic">🎬 Movie Watch</div>
+        <div className="text-xl font-serif italic">🍿SeatNema</div>
 
         {/* Right menu */}
         <div className="flex items-center ml-auto gap-4">
